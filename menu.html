@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Menu - SMS Templates</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: rgba(18, 18, 18, 0.95);
+            --bg-secondary: rgba(28, 28, 28, 0.9);
+            --bg-hover: rgba(45, 45, 45, 0.8);
+            --text-primary: rgba(255, 255, 255, 0.95);
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --accent-color: rgba(79, 70, 229, 0.9);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --header-height: 60px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            min-height: -webkit-fill-available;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--header-height);
+            background: var(--bg-primary);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-btn {
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--bg-hover);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--accent-color);
+        }
+
+        .header h1 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-left: 12px;
+        }
+
+        .container {
+            padding: calc(var(--header-height) + 16px) 16px 16px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .menu-item {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateX(8px);
+            background: var(--bg-hover);
+            border-color: var(--accent-color);
+        }
+
+        .menu-item i {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-right: 16px;
+        }
+
+        .menu-item-content {
+            flex: 1;
+        }
+
+        .menu-item-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .menu-item-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i>
+            Back
+        </a>
+        <h1>Menu</h1>
+    </header>
+
+    <div class="container">
+        <a href="index.html" class="menu-item">
+            <i class="fas fa-home"></i>
+            <div class="menu-item-content">
+                <div class="menu-item-title">Home</div>
+                <div class="menu-item-description">View all SMS templates</div>
+            </div>
+        </a>
+        
+        <a href="#" class="menu-item">
+            <i class="fas fa-star"></i>
+            <div class="menu-item-content">
+                <div class="menu-item-title">Favorites</div>
+                <div class="menu-item-description">Access your saved templates</div>
+            </div>
+        </a>
+        
+        <a href="#" class="menu-item">
+            <i class="fas fa-history"></i>
+            <div class="menu-item-content">
+                <div class="menu-item-title">Recent</div>
+                <div class="menu-item-description">View recently used templates</div>
+            </div>
+        </a>
+        
+        <a href="#" class="menu-item">
+            <i class="fas fa-cog"></i>
+            <div class="menu-item-content">
+                <div class="menu-item-title">Settings</div>
+                <div class="menu-item-description">Customize your experience</div>
+            </div>
+        </a>
+    </div>
+</body>
+</html>
